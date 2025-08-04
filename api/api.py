@@ -1,19 +1,13 @@
-# Importation du module flask
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
 # Activattion du module debug
 app.config['DEBUG'] = True
 
-@app.route('/api/data', methods=['GET'])
-def get_data():
-    data = {
-        'id': 1,
-        'name': 'John Doe',
-        'email': 'ngasamah@gmail.com'
-    }
-    return jsonify(data)
+@app.route('/', methods=['GET'])
+def home():
+    return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distance reading of size fiction novels</p>"
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == 'api':
+    app.run(port=5000)
