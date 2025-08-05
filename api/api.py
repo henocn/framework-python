@@ -9,5 +9,4 @@ app.config['DEBUG'] = True
 def home():
     return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distance reading of size fiction novels</p>"
 
-if __name__ == 'api':
-    app.run(port=5000)
+app.run(port=5000)
