@@ -2,7 +2,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# Activattion du module debug
 app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET'])
