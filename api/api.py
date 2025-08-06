@@ -30,11 +30,13 @@ def create_book():
     data = request.get_json()
     title = data.get('title')
     author = data.get('author')
+    year_published = data.get('year_published')
+
 
     if not title or not author:
         return jsonify({"error": "Title and author are required"}), 400
 
-    new_book = Book(title=title, author=author)
+    new_book = Book(title=title, author=author, year_published=year_published)
     db.session.add(new_book)
     db.session.commit()
     return jsonify(new_book.to_dict()), 201
